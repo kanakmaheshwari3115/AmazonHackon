@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoShop Navigator - Sustainable Luxury</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/heroicons/2.1.1/24/outline/css/heroicons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              accent: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              amazon: {
+                DEFAULT: '#FF9900', // Main Orange/Amazon Orange
+                orange: '#FF9900',
+                yellow: '#FFD814', // Lighter yellow, often for buttons
+                darkBlue: '#131A22', // Deep dark blue, often for footers or page backgrounds in dark mode
+                navBlue: '#232F3E', // Primary dark blue for main navigation
+                linkBlue: '#007185', // Standard link color
+                textBlack: '#0F1111', // Primary text color on light backgrounds
+                lightGray: '#EAEDED', // Common page background color (light mode)
+                mediumGray: '#BBBFBF', // Borders, secondary text, disabled elements
+                white: '#FFFFFF', // Text on dark backgrounds, card backgrounds
+              },
+              // Kept existing brand colors for reference or potential specific use, but Amazon theme will override defaults
+              brand: {
+                forest: '#2D5520',
+                sage: '#87A96B',
+                mint: '#A8E6CF',
+                earth: '#8B4513',
+                gold: '#FFD700',
+                ocean: '#4A90E2',
+                sunset: '#FF8C42',
+                white: '#FFFFFF',
+                lightGray: '#F8F9FA',
+                mediumGray: '#6C757D',
+                charcoal: '#2C3E50',
+              },
+            },
+            animation: {
+              fadeInUp: 'fadeInUp 0.6s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                'from': { opacity: 0, transform: 'translateY(30px)' },
+                'to': { opacity: 1, transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Amazon-like scrollbar (optional, often system default is fine) */
+      ::-webkit-scrollbar {
+        width: 10px; /* Slightly wider for Amazon feel */
+        height: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f0f2f2; /* Lighter track */
+      }
+      html.dark ::-webkit-scrollbar-track {
+        background: #1a2430; /* Darker track for dark mode */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c5c5c5; /* Medium gray thumb, similar to Amazon's subtle scrollbars */
+        border-radius: 5px;
+        border: 2px solid #f0f2f2; /* Creates a border effect */
+      }
+      html.dark ::-webkit-scrollbar-thumb {
+        background: #505861;
+        border-color: #1a2430;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+      }
+      html.dark ::-webkit-scrollbar-thumb:hover {
+        background: #6c757d;
+      }
+
+      html, body, #root {
+        height: 100%;
+        margin: 0;
+        font-family: 'Inter', sans-serif; /* Default to Inter for Amazon-like feel */
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        background-color: #EAEDED; /* amazon-lightGray */
+        color: #0F1111; /* amazon-textBlack */
+        transition: background-color 0.3s ease, color 0.3s ease;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body.dark {
+        background-color: #131A22; /* amazon-darkBlue */
+        color: #FFFFFF; /* amazon-white */
+      }
+
+      /* Sidebar Styles - Ensure they work with new theme */
+      .sidebar {
+        transform: translateX(100%);
+      }
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 90; 
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+      }
+      html.dark .sidebar-overlay {
+         background-color: rgba(0, 0, 0, 0.7);
+      }
+      .sidebar-overlay.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Entrance Animations */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .product-card-animate {
+        animation: fadeInUp 0.6s ease-out;
+        animation-fill-mode: both;
+      }
+      /* Keep original product grid animation delays, can be adjusted in ProductList if needed */
+      .product-grid .product-card-animate:nth-child(1) { animation-delay: 0.1s; }
+      .product-grid .product-card-animate:nth-child(2) { animation-delay: 0.2s; }
+      .product-grid .product-card-animate:nth-child(3) { animation-delay: 0.3s; }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.3.0",
+    "@/App": "./App.tsx",
+    "@/components/ProductCard": "./components/ProductCard.tsx",
+    "@/constants": "./constants.ts"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-amazon-lightGray text-amazon-textBlack dark:bg-amazon-darkBlue dark:text-amazon-white">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
