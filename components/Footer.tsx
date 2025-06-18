@@ -45,8 +45,8 @@ const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 text-left">
           <div>
             <h3 className="font-bold mb-3 text-base text-amazon-white">Get to Know Us</h3>
-            <FooterLink label="About EcoShop" href="#" />
-            <FooterLink label="Sustainability Pledge" href="#" />
+            <FooterLink label="About EcoShop" onClick={() => alert("About EcoShop (coming soon)")} />
+            <FooterLink label="Sustainability Pledge" onClick={() => alert("Sustainability Pledge (coming soon)")} />
             {/* <FooterLink label="Careers (Simulated)" href="#" />
             <FooterLink label="Press Releases (Simulated)" href="#" /> */}
           </div>

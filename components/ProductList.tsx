@@ -33,7 +33,7 @@ const ProductList: React.FC<ProductListProps> = ({ products, onViewDetails, onAd
           <p className="text-center text-gray-500 dark:text-amazon-mediumGray text-lg py-8">No products found. Try broadening your search or check back later!</p>
         ) : (
           // Using flex-wrap for grid, can be enhanced for horizontal scroll (carousel) with more CSS/JS
-          <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-5 product-grid"> 
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-5 product-grid"> 
             {products.map((product, index) => (
               // The animation delay is managed by ProductCard directly via its `product-card-animate` class
               // The key is essential here for React's rendering

@@ -83,7 +83,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <div
-      className={`sidebar ${isOpen ? 'open' : ''} fixed top-0 right-0 h-full w-72 sm:w-80 bg-slate-800 dark:bg-slate-900 text-white shadow-2xl z-[100] flex flex-col transition-transform duration-300 ease-in-out`}
+      className={`sidebar ${isOpen ? 'open' : ''} fixed top-0 left-0 h-full w-72 sm:w-80 bg-slate-800 dark:bg-slate-900 text-white shadow-2xl z-[100] flex flex-col transition-transform duration-300 ease-in-out`}
       aria-hidden={!isOpen}
     >
       {/* Sidebar Header */}

@@ -1,11 +1,11 @@
-
 import React, { useState } from 'react';
 
 interface ShippingOptionsPopoverProps {
-  children: React.ReactNode; // This will be the info icon
+  children: React.ReactNode; // This will be the info icon or text trigger
+  additionalClassName?: string; // To pass custom horizontal offsets like ml-4, mr-4
 }
 
-const ShippingOptionsPopover: React.FC<ShippingOptionsPopoverProps> = ({ children }) => {
+const ShippingOptionsPopover: React.FC<ShippingOptionsPopoverProps> = ({ children, additionalClassName }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -19,7 +19,7 @@ const ShippingOptionsPopover: React.FC<ShippingOptionsPopoverProps> = ({ childre
       </span>
       {isOpen && (
         <div
-          className="absolute z-20 w-64 p-3 -mt-2 text-sm leading-normal text-left text-gray-700 dark:text-slate-200 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg shadow-lg dark:shadow-slate-900/50 transform -translate-x-1/2 left-1/2 bottom-full mb-2 transition-opacity duration-150"
+          className={`absolute z-20 w-64 p-3 -mt-2 text-sm leading-normal text-left text-gray-700 dark:text-slate-200 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg shadow-lg dark:shadow-slate-900/50 transform -translate-x-1/2 left-1/2 bottom-full mb-2 transition-opacity duration-150 ${additionalClassName || ''}`}
           role="tooltip"
         >
           <h3 className="font-semibold text-gray-900 dark:text-slate-50 mb-1">Shipping Options Explained</h3>
@@ -31,7 +31,8 @@ const ShippingOptionsPopover: React.FC<ShippingOptionsPopoverProps> = ({ childre
             <strong className="text-blue-600 dark:text-blue-400">Individual Shipping:</strong> Standard direct shipping.
             Typically faster.
           </p>
-           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full w-0 h-0 border-t-8 border-t-white dark:border-t-slate-700 border-r-8 border-r-transparent border-l-8 border-l-transparent"></div> {/* Arrow */}
+           {/* Arrow: Centered within this popover box. If box is shifted, arrow shifts too. */}
+           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full w-0 h-0 border-t-8 border-t-white dark:border-t-slate-700 border-r-8 border-r-transparent border-l-8 border-l-transparent"></div>
         </div>
       )}
     </div>
