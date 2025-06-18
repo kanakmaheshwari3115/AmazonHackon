@@ -7,7 +7,7 @@ EcoShop Navigator is a cutting-edge web application designed to empower users to
 
 This application is live and can be viewed at:
 
-**https://eco-shop-navigator.vercel.app/**
+**https://amazon-hackon-pied.vercel.app/**
 
 ## 👥 Team Members
 
