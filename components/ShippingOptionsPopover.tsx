@@ -19,7 +19,7 @@ const ShippingOptionsPopover: React.FC<ShippingOptionsPopoverProps> = ({ childre
       </span>
       {isOpen && (
         <div
-          className={`absolute z-20 w-64 p-3 -mt-2 text-sm leading-normal text-left text-gray-700 dark:text-slate-200 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg shadow-lg dark:shadow-slate-900/50 transform -translate-x-1/2 left-1/2 bottom-full mb-2 transition-opacity duration-150 ${additionalClassName || ''}`}
+          className={`absolute left-2 ml-[-28px] z-20 w-52 p-3 -mt-2 text-xs leading-normal text-left text-gray-700 dark:text-slate-200 bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-lg shadow-lg dark:shadow-slate-900/50 bottom-full mb-2 transition-opacity duration-150 ${additionalClassName || ''}`}
           role="tooltip"
         >
           <h3 className="font-semibold text-gray-900 dark:text-slate-50 mb-1">Shipping Options Explained</h3>

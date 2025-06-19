@@ -13,7 +13,7 @@ interface MarketplaceViewProps {
 
 const MarketplaceView: React.FC<MarketplaceViewProps> = ({ listings, onViewListing, onOpenCreateListingModal, isLoading }) => {
   return (
-    <div className="py-8">
+    <div className="py-8 mx-6"> {/* Horizontal margins added here */}
       <div className="flex flex-col sm:flex-row justify-between items-center mb-8 pb-4 border-b border-slate-300 dark:border-slate-700">
         <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4 sm:mb-0">
           Circular Economy Marketplace
