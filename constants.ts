@@ -301,7 +301,7 @@ export const INITIAL_SELLER_PRODUCTS: Product[] = [
   {
     id: 'seller-item-1',
     name: 'Handmade Recycled Paper Journal',
-    imageUrl: '/assets/images/handmade_recycled_paper_journal.jpg', // UPDATED
+    imageUrl: '/assets/images/handmade_recycled_paper_journal.webp', // UPDATED
     // imagePrompt: 'A unique, artisanal journal with a textured cover made from recycled paper. Earthy tones, possibly with visible fibers or pressed flowers.', // REMOVED
     description: 'Unique journal made from 100% recycled paper by local artisans.',
     ecoScore: 4.5,
