@@ -41,15 +41,15 @@ const Footer: React.FC<FooterProps> = ({
           Back to top
         </button>
       </div>
-      <div className="container mx-auto px-6 py-10 sm:py-12">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 text-left">
-          <div>
-            <h3 className="font-bold mb-3 text-base text-amazon-white">Get to Know Us</h3>
-            <FooterLink label="About EcoShop" onClick={() => alert("About EcoShop (coming soon)")} />
-            <FooterLink label="Sustainability Pledge" onClick={() => alert("Sustainability Pledge (coming soon)")} />
+      <div className="container mx-auto px-6 py-10 sm:py-12 ">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 text-left justify-center w-fit mx-auto">
+          {/* <div> */}
+            {/* <h3 className="font-bold mb-3 text-base text-amazon-white">Get to Know Us</h3> */}
+            {/* <FooterLink label="About EcoShop" onClick={() => alert("About EcoShop (coming soon)")} /> */}
+            {/* <FooterLink label="Sustainability Pledge" onClick={() => alert("Sustainability Pledge (coming soon)")} /> */}
             {/* <FooterLink label="Careers (Simulated)" href="#" />
             <FooterLink label="Press Releases (Simulated)" href="#" /> */}
-          </div>
+          {/* </div> */}
           <div>
             <h3 className="font-bold mb-3 text-base text-amazon-white">Make Money with Us</h3>
             <FooterLink label="Sell on EcoShop" onClick={onOpenSellerRegistration} />
